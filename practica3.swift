@@ -1,49 +1,57 @@
 import Foundation
 
-class Promedio{
-	var cali1 = 0.0
-	var cali2 = 0.0
-	var cali3 = 0.0
-	var cali4 = 0.0
-	var cali5 = 0.0
-	var cali6 = 0.0
-	var cali7 = 0.0
-	var cali8 = 0.0
-	var cali9 = 0.0
-	var cali10 = 0.0
-	var suma = 0.0
-	var promedioFinal = 0.0
+import Foundation
 
-	func ingresaCalificacion(){
-    	print("ingrese la calificación 1")
-    	cali1 = Double(readLine()!)!
-    	print("ingrese la calificación 2 \n")
-    	cali2 = Double(readLine()!)!
-    	print("ingrese la calificación 3\n")
-    	cali3 = Double(readLine()!)!
-    	print("ingrese la calificación 4\n")
-    	cali4 = Double(readLine()!)!
-    	print("ingrese la calificación 5\n")
-    	cali5 = Double(readLine()!)!
-    	print("ingrese la calificación 6\n")
-    	cali6 = Double(readLine()!)!
-    	print("ingrese la calificación 7\n")
-    	cali7 = Double(readLine()!)!
-    	print("ingrese la calificación 8\n")
-    	cali8 = Double(readLine()!)!
-    	print("ingrese la calificación 9\n")
-    	cali9 = Double(readLine()!)!
-    	print("ingrese la calificación 10 \n")
-    	cali10 = Double(readLine()!)!
+class Inventario{
+	var panDulce=35
+	var cheetos=13
+	var dulces=123
+	var refrescos=16
+	var productoNuevo = " "
+	var cantidadNuevoProducto = 0
+	var productosTotales = 0
+
+	func masProducto(){
+    	print("Cuanto pan dulce quieres agregar \n")
+    	let masPanDulce = Int(readLine()!)!
+    	print("Cuantos cheetos quieres agregar \n")
+    	let masCheetos = Int(readLine()!)!
+    	print("Cuantos dulces quieres agregar \n")
+    	let masDulces = Int(readLine()!)!
+    	print("Cuantos refrescos quieres agregar \n")
+    	let masRefrescos = Int(readLine()!)!
+
+    	panDulce = panDulce + masPanDulce
+    	cheetos = cheetos + masCheetos
+    	dulces = dulces + masDulces
+    	refrescos = refrescos + masRefrescos
 	}
 
-	func calcularPromedio(){
-    	suma = cali1+cali2+cali3+cali4+cali5+cali6+cali7+cali8+cali9+cali10
-    	promedioFinal = suma/10
-    	print("El promedio es: \(promedioFinal)")
+	func menosProducto(){
+    	print("Cuanto pan dulce quieres quitar \n")
+    	let menosPanDulce = Int(readLine()!)!
+    	print("Cuantos cheetos quieres quitar \n")
+    	let menosCheetos = Int(readLine()!)!
+    	print("Cuantos dulces quieres quitar \n")
+    	let menosDulces = Int(readLine()!)!
+    	print("Cuantos refrescos quieres quitar \n")
+    	let menosRefrescos = Int(readLine()!)!
+
+    	panDulce = panDulce - menosPanDulce
+    	cheetos = cheetos - menosCheetos
+    	dulces = dulces - menosDulces
+    	refrescos = refrescos - menosRefrescos
+	}
+
+	func nuevoProducto(){
+    	print("Agrega un nuevo producto\n")
+    	productoNuevo = readLine()!
+    	print("Cual es la cantidad de ese producto\n")
+    	cantidadNuevoProducto = Int(readLine()!)!
+	}
+
+	func totalProductos(){
+	    productosTotales = panDulce+cheetos+refrescos+dulces+cantidadNuevoProducto
+	    print("En total se tienen \(productosTotales) productos")
 	}
 }
-
-var promedio1 = Promedio()
-promedio1.ingresaCalificacion()
-promedio1.calcularPromedio()

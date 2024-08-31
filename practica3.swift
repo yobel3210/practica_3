@@ -1,73 +1,53 @@
 import Foundation
 
-import Foundation
+class Calculator{
+    var number1 = 0.0
+    var number2 = 0.0
+    var sum = 0.0
+    var subtraction = 0.0
+    var product = 0.0
+    var quotient = 0.0
+    var sqrtNumber1 = 0.0
+    var sqrtNumber2 = 0.0
 
-class Inventario{
-	var panDulce=35
-	var cheetos=13
-	var dulces=123
-	var refrescos=16
-	var productoNuevo = " "
-	var cantidadNuevoProducto = 0
-	var productosTotales = 0
+    func inputValues(){
+        print("Ingresa el valor para el primer numero")
+        number1 = Double(readLine()!)!
+        print("ingresa el valor para el segundo numero")
+        number2 = Double(readLine()!)!
+    }
 
-	func masProducto(){
-    	print("Cuanto pan dulce quieres agregar \n")
-    	let masPanDulce = Int(readLine()!)!
-    	print("Cuantos cheetos quieres agregar \n")
-    	let masCheetos = Int(readLine()!)!
-    	print("Cuantos dulces quieres agregar \n")
-    	let masDulces = Int(readLine()!)!
-    	print("Cuantos refrescos quieres agregar \n")
-    	let masRefrescos = Int(readLine()!)!
+    func additionTwoNumbers(){
+        sum = number1+number2
+        print("La suma de los dos numeros es \(sum) \n")
+    }
+    func subtractionTwoNumbers(){
+        subtraction = number1-number2
+        print("La resta de los dos numeros es \(subtraction) \n")
+    }
 
-    	panDulce = panDulce + masPanDulce
-    	cheetos = cheetos + masCheetos
-    	dulces = dulces + masDulces
-    	refrescos = refrescos + masRefrescos
-	}
+    func productTwoNumbers(){
+        product = number1*number2
+        print("El producto de los numeros es \(product) \n")
+    }
 
-	func menosProducto(){
-    	print("Cuanto pan dulce quieres quitar \n")
-    	let menosPanDulce = Int(readLine()!)!
-    	print("Cuantos cheetos quieres quitar \n")
-    	let menosCheetos = Int(readLine()!)!
-    	print("Cuantos dulces quieres quitar \n")
-    	let menosDulces = Int(readLine()!)!
-    	print("Cuantos refrescos quieres quitar \n")
-    	let menosRefrescos = Int(readLine()!)!
+    func divisionTwoNumbers(){
+        quotient = number1/number2
+        print("El cociente \(number1) entre \(number2) es \(quotient) \n")
+    }
 
-    	panDulce = panDulce - menosPanDulce
-    	cheetos = cheetos - menosCheetos
-    	dulces = dulces - menosDulces
-    	refrescos = refrescos - menosRefrescos
-	}
-
-	func nuevoProducto(){
-    	print("Agrega un nuevo producto\n")
-    	productoNuevo = readLine()!
-    	print("Cual es la cantidad de ese producto\n")
-    	cantidadNuevoProducto = Int(readLine()!)!
-	}
-
-	func totalProductos(){
-	    productosTotales = panDulce+cheetos+refrescos+dulces+cantidadNuevoProducto
-	    print("En total se tienen \(productosTotales) productos")
-	}
-
-	func verProductos(){
-	    print("Vista general del inventario:\n")
-	    print("Pan dulce: \(panDulce) piezas")
-	    print("Cheetos: \(cheetos) piezas")
-	    print("Dulces: \(dulces) piezas")
-	    print("Refrescos: \(refrescos) piezas")
-	    print("\(productoNuevo): \(cantidadNuevoProducto) piezas")
-	}
+    func sqrtOfNumbers(){
+        sqrtNumber1 = sqrt(number1)
+        sqrtNumber2 = sqrt(number2)
+        print("La raiz cuadrada de \(number1) = \(sqrtNumber1) \n")
+        print("La raiz cuadrada de \(number2) = \(sqrtNumber2) \n")
+    }
 }
 
-var miInventario = Inventario()
-miInventario.masProducto()
-miInventario.menosProducto()
-miInventario.nuevoProducto()
-miInventario.totalProductos()
-miInventario.verProductos()
+var myFirstCalculation = Calculator()
+myFirstCalculation.inputValues()
+myFirstCalculation.additionTwoNumbers()
+myFirstCalculation.subtractionTwoNumbers()
+myFirstCalculation.productTwoNumbers()
+myFirstCalculation.divisionTwoNumbers()
+myFirstCalculation.sqrtOfNumbers()

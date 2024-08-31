@@ -54,4 +54,15 @@ class Inventario{
 	    productosTotales = panDulce+cheetos+refrescos+dulces+cantidadNuevoProducto
 	    print("En total se tienen \(productosTotales) productos")
 	}
+
+	func verProductos(){
+	    print("Vista general del inventario:\n")
+	    print("Pan dulce: \(panDulce) piezas")
+	    print("Cheetos: \(cheetos) piezas")
+	    print("Dulces: \(dulces) piezas")
+	    print("Refrescos: \(refrescos) piezas")
+	    print("\(productoNuevo): \(cantidadNuevoProducto) piezas")
+	}
 }
+
+

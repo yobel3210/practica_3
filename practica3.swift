@@ -65,4 +65,9 @@ class Inventario{
 	}
 }
 
-
+var miInventario = Inventario()
+miInventario.masProducto()
+miInventario.menosProducto()
+miInventario.nuevoProducto()
+miInventario.totalProductos()
+miInventario.verProductos()

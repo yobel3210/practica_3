@@ -1,53 +1,61 @@
 import Foundation
 
-class Calculator{
-    var number1 = 0.0
-    var number2 = 0.0
-    var sum = 0.0
-    var subtraction = 0.0
-    var product = 0.0
-    var quotient = 0.0
-    var sqrtNumber1 = 0.0
-    var sqrtNumber2 = 0.0
+class Figures{
+    var radioCircle = 0.0
+    var side = 0.0
+    var side2 = 0.0
+    var side3 = 0.0
+    var height = 0.0
+    var pi = 3.141592
 
-    func inputValues(){
-        print("Ingresa el valor para el primer numero")
-        number1 = Double(readLine()!)!
-        print("ingresa el valor para el segundo numero")
-        number2 = Double(readLine()!)!
+    func calculeCircle(){
+        print("Ingrese el radio del círculo:")
+        radioCircle = Double(readLine()!)!
+        let areaCircle = (pow(radioCircle,2))*pi
+        let perimeterCircle = 2*pi*radioCircle
+        print("El área del círculo es \(areaCircle) u²")
+        print("El perímetro del círculo es \(perimeterCircle) u \n")
     }
 
-    func additionTwoNumbers(){
-        sum = number1+number2
-        print("La suma de los dos numeros es \(sum) \n")
-    }
-    func subtractionTwoNumbers(){
-        subtraction = number1-number2
-        print("La resta de los dos numeros es \(subtraction) \n")
+    func calculeTriangle(){
+        print("ingrese la medida de la base del tríangulo")
+        side = Double(readLine()!)!
+        print("Ingrese la altura")
+        height = Double(readLine()!)!
+        let areaTriangle = (side*height)/2
+        print("El area del tríangulo es \(areaTriangle) u²")
+        print("Para calcular el perímetro se requiere proporcionar la medida de los tres lados")
+        print("ingrese lado 1")
+        side = Double(readLine()!)!
+        print("ingrese lado 2")
+        side2 = Double(readLine()!)!
+        print("ingrese lado 3")
+        side3 = Double(readLine()!)!
+        let perimeterTriangle = side+side2+side3
+        print("El perimetro del tríangulo es \(perimeterTriangle) u \n")
     }
 
-    func productTwoNumbers(){
-        product = number1*number2
-        print("El producto de los numeros es \(product) \n")
+    func calculeSquare(){
+        print("Ingrese la medida de uno de los lados del cuadrado:")
+        side = Double(readLine()!)!
+        let areaSquare = pow(side,2)
+        let perimeterSquare = side*4
+        print("El area del cuadrado es \(areaSquare) u²")
+        print("El perimetro del cuadrado es \(perimeterSquare)u \n")
     }
 
-    func divisionTwoNumbers(){
-        quotient = number1/number2
-        print("El cociente \(number1) entre \(number2) es \(quotient) \n")
-    }
-
-    func sqrtOfNumbers(){
-        sqrtNumber1 = sqrt(number1)
-        sqrtNumber2 = sqrt(number2)
-        print("La raiz cuadrada de \(number1) = \(sqrtNumber1) \n")
-        print("La raiz cuadrada de \(number2) = \(sqrtNumber2) \n")
+    func calculeCube(){
+        print("Ingrese la medida de uno de los lados del cubo:")
+        side = Double(readLine()!)!
+        let areaCube = (side*side)*6
+        let perimeterCube = side*12
+        print("El area del cubo es \(areaCube) u²")
+        print("El perímetro del cubo es \(perimeterCube) u")
     }
 }
 
-var myFirstCalculation = Calculator()
-myFirstCalculation.inputValues()
-myFirstCalculation.additionTwoNumbers()
-myFirstCalculation.subtractionTwoNumbers()
-myFirstCalculation.productTwoNumbers()
-myFirstCalculation.divisionTwoNumbers()
-myFirstCalculation.sqrtOfNumbers()
+var myFigures = Figures()
+myFigures.calculeCircle()
+myFigures.calculeSquare()
+myFigures.calculeTriangle()
+myFigures.calculeCube()
